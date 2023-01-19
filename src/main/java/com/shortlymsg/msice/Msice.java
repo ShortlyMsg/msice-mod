@@ -1,6 +1,7 @@
 package com.shortlymsg.msice;
 
 import com.mojang.logging.LogUtils;
+import com.shortlymsg.msice.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,6 +20,8 @@ public class Msice {
 
     public Msice() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
