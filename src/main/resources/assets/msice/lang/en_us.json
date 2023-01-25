@@ -1,6 +1,8 @@
 {
   "item.msice.sice":"Sice",
   "item.msice.sice_crystal":"Sice Crystal",
+  "block.msice.sice_ore": "Sice Ore",
+  "block.msice.sice_block": "Sice Block",
 
   "itemGroup.msicetab": "Msice Mod Tab"
 }

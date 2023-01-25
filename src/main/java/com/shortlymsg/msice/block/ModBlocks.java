@@ -3,10 +3,12 @@ package com.shortlymsg.msice.block;
 import com.shortlymsg.msice.Msice;
 import com.shortlymsg.msice.item.ModCreativeItemModeTab;
 import com.shortlymsg.msice.item.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,8 +24,12 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Msice.MOD_ID);
 
     public static final RegistryObject<Block> SICE_BlOCK = registerBlock("sice_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
-                    .requiresCorrectToolForDrops().strength(3.0F)), ModCreativeItemModeTab.MSICE_TAB);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeItemModeTab.MSICE_TAB);
+    public static final RegistryObject<Block> SICE_ORE = registerBlock("sice_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3,7)), ModCreativeItemModeTab.MSICE_TAB);
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block,
                                                                     CreativeModeTab tab){
