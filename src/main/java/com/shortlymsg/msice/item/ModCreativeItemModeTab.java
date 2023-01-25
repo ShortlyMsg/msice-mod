@@ -8,7 +8,7 @@ public class ModCreativeItemModeTab {
     public static final CreativeModeTab MSICE_TAB = new CreativeModeTab("msicetab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.SICE.get());
+            return new ItemStack(ModItems.SICE_CRYSTAL.get());
         }
     };
 }
